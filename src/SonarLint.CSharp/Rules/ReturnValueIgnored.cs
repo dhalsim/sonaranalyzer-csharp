@@ -101,8 +101,11 @@ namespace SonarLint.Rules.CSharp
                 return;
             }
 
+            var constructedFrom = invokedMethodSymbol.ContainingType.ConstructedFrom;
+
             if (IsLinqMethod(invokedMethodSymbol) ||
                 HasOnlySideEffectFreeMethods(invokedMethodSymbol.ContainingType) ||
+                HasOnlySideEffectFreeMethods(constructedFrom) ||
                 IsPureMethod(invokedMethodSymbol))
             {
                 c.ReportDiagnostic(Diagnostic.Create(Rule, expression.GetLocation(), invokedMethodSymbol.Name));
@@ -154,7 +157,13 @@ namespace SonarLint.Rules.CSharp
             KnownType.System_Collections_Immutable_ImmutableSortedSet,
             KnownType.System_Collections_Immutable_ImmutableSortedSet_T,
             KnownType.System_Collections_Immutable_ImmutableStack,
-            KnownType.System_Collections_Immutable_ImmutableStack_T
+            KnownType.System_Collections_Immutable_ImmutableStack_T,
+
+            KnownType.LanguageExt_Lst_T,
+            KnownType.LanguageExt_Map_TKey_TValue,
+            KnownType.LanguageExt_Set_T,
+            KnownType.LanguageExt_Que_T,
+            KnownType.LanguageExt_Stck_T
         });
 
         private static bool IsLinqMethod(IMethodSymbol methodSymbol)
