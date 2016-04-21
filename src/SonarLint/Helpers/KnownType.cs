@@ -143,12 +143,6 @@ namespace SonarLint.Helpers
         public static readonly KnownType System_Collections_Immutable_ImmutableStack = new KnownType("System.Collections.Immutable.ImmutableStack");
         public static readonly KnownType System_Collections_Immutable_ImmutableStack_T = new KnownType("System.Collections.Immutable.ImmutableStack<T>");
 
-        public static readonly KnownType LanguageExt_Lst_T = new KnownType("LanguageExt.Lst<T>");
-        public static readonly KnownType LanguageExt_Map_TKey_TValue = new KnownType("LanguageExt.Map<TKey, TValue>");
-        public static readonly KnownType LanguageExt_Set_T = new KnownType("LanguageExt.Set<T>");
-        public static readonly KnownType LanguageExt_Que_T = new KnownType("LanguageExt.Que<T>");
-        public static readonly KnownType LanguageExt_Stck_T = new KnownType("LanguageExt.Stck<T>");
-
         public static readonly KnownType System_Diagnostics_Contracts_PureAttribute = new KnownType("System.Diagnostics.Contracts.PureAttribute");
 
         public static readonly KnownType System_Runtime_InteropServices_ComImportAttribute = new KnownType("System.Runtime.InteropServices.ComImportAttribute");
